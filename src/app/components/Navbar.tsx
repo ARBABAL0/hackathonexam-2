@@ -2,6 +2,7 @@ import React from 'react';
 import { FaBell } from 'react-icons/fa6';
 import { FcLike } from 'react-icons/fc';
 import { IoIosSettings } from 'react-icons/io';
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
@@ -32,26 +33,28 @@ export default function Navbar() {
       <div className="flex items-center space-x-6">
         {/* Heart Icon */}
         <div className="text-gray-500 hover:text-gray-800 cursor-pointer">
-        <FcLike />
+          <FcLike />
         </div>
 
         {/* Notification Bell */}
         <div className="relative text-gray-500 hover:text-gray-800 cursor-pointer">
-        <FaBell />
+          <FaBell />
           <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
         </div>
 
         {/* Settings */}
         <div className="text-gray-500 hover:text-gray-800 cursor-pointer">
-        <IoIosSettings />
+          <IoIosSettings />
         </div>
 
         {/* Avatar */}
         <div className="w-8 h-8 rounded-full overflow-hidden">
-          <img
-            src="/Image.png"
-            alt="User Avatar"
-            className="w-full h-full object-cover"
+          {/* Replace this placeholder with your actual image */}
+          <Image 
+            src="/Image.png" 
+            alt="User Avatar" 
+            width={100} 
+            height={100} 
           />
         </div>
       </div>

@@ -31,7 +31,7 @@ const Hero = () => {
             <Image
               src="/image 7 (1).png"
               alt="Car"
-              width={340}
+              width={250}
               height={108}
               className="mt-4 ml-40 object-cover"
             />
@@ -55,7 +55,7 @@ const Hero = () => {
             <Image
               src="/image 8.png" 
               alt="Car"
-              width={340}
+              width={200}
               height={108}
               className="mt-4 ml-40 object-cover"
             />
