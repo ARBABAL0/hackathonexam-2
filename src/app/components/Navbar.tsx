@@ -1,25 +1,60 @@
 import React from 'react';
-import Image from 'next/image';
+import { FaBell } from 'react-icons/fa6';
+import { FcLike } from 'react-icons/fc';
+import { IoIosSettings } from 'react-icons/io';
 
 export default function Navbar() {
   return (
-    <div className='w-full bg-white h-auto flex flex-col md:flex-row items-center justify-between p-4 md:p-8 border-b-2 border-b-[#e7eef6]'>
-      <div className="first flex flex-col md:flex-row items-center gap-4 md:gap-16">
-        <h1 className='text-[#3563e9] text-4xl font-bold'>MORENT</h1>
-        <div className="input relative w-full md:w-auto">
-          <Image src={'/search-normal.png'} alt='' width={24} height={24} className='absolute top-1/2 left-3 transform -translate-y-1/2'/>
-          <input 
-            type="text" 
-            title="search" 
-            placeholder="Say something here" 
-            className='border-2 border-[#e7eef6] w-full md:w-[492px] h-[44px] rounded-full p-2 pl-10 pr-12'
-          />
-          <Image src={'/filter.png'} alt='' width={24} height={24} className='absolute top-1/2 right-3 transform -translate-y-1/2'/>
+    <header className="flex items-center justify-between p-4 bg-white shadow-md">
+      {/* Logo */}
+      <div className="text-2xl font-bold text-blue-500">MORENT</div>
+
+      {/* Search Bar */}
+      <div className="hidden md:flex items-center w-full max-w-md bg-gray-100 border border-gray-300 rounded-full px-4 py-2">
+        <input
+          type="text"
+          placeholder="Search something here"
+          className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-500"
+        />
+        <div className="text-gray-500 cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M9 2a7 7 0 100 14 7 7 0 000-14zM17.293 17.293a1 1 0 01-1.414 0l-3.386-3.386a8.001 8.001 0 111.414-1.414l3.386 3.386a1 1 0 010 1.414z" />
+          </svg>
         </div>
       </div>
-      <div className="icons mt-4 md:mt-0">
-        <Image src={'/Profil & Notification.png'} alt='' width={236} height={44} />
+
+      {/* Icons */}
+      <div className="flex items-center space-x-6">
+        {/* Heart Icon */}
+        <div className="text-gray-500 hover:text-gray-800 cursor-pointer">
+        <FcLike />
+        </div>
+
+        {/* Notification Bell */}
+        <div className="relative text-gray-500 hover:text-gray-800 cursor-pointer">
+        <FaBell />
+          <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+        </div>
+
+        {/* Settings */}
+        <div className="text-gray-500 hover:text-gray-800 cursor-pointer">
+        <IoIosSettings />
+        </div>
+
+        {/* Avatar */}
+        <div className="w-8 h-8 rounded-full overflow-hidden">
+          <img
+            src="/Image.png"
+            alt="User Avatar"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
