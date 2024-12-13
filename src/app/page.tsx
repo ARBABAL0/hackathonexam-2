@@ -2,7 +2,7 @@
 
 import React from "react";
 import Herosection from "./components/herosection";
-import Details from "./components/details";
+
 import Admin from "./components/admin";
 import Categories from "./components/categories";
 
@@ -13,7 +13,6 @@ const Home = ()=>{
 <div>
   <Herosection/>
   <Categories/>
-  <Details/>
  <Admin/>
  <Payment/>
 </div>
